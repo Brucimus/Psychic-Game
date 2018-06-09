@@ -3,8 +3,18 @@ var win = 0;
 var losses = 0;
 var guesses = 9;
 
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
 document.onkeyup = function(Event) {
     var userGuess  = event.key;
+
+    if (typeof(userGuess) == "string") {
+
+        return;
+    } else if (userGuess.length < 2) {
+        
+        return;
+    }
+
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+    if (userGuess.toLowercase() == computerGuess);
 }
