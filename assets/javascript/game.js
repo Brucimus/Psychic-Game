@@ -9,21 +9,26 @@ document.onkeydown = function(Event) {
 
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-    if (userGuess == computerGuess) {
+    //allows capitalized letters
+    if (userGuess.toLowerCase() == computerGuess) {
+        // what happens when user wins
         win++;
         guesses = 9;
         guessedLetters = "";
     } else {
+        //what happens when user guesses wrong
         guesses--
         guessedLetters = guessedLetters + " " + userGuess;
     }
 
+    //what happens when user loses
     if (guesses == 0) {
         losses++;
         guesses = 9;
         guessedLetters = "";
     }
 
+    //display scores on html
     var html =
         "<p>wins: " + win + "</p>" +
         "<p>losses: " + losses + "</p>" +
