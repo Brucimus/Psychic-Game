@@ -2,25 +2,33 @@ var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","
 var win = 0;
 var losses = 0;
 var guesses = 9;
+var guessedLetters = "";
 
-document.onkeyup = function(Event) {
+document.onkeydown = function(Event) {
     var userGuess  = event.key;
-
-    if (typeof(userGuess) == "string") {
-        alert("This is not a letter.")
-        return;
-    } else if (userGuess.length < 2) {
-        alert("Please enter one letter at a time.")        
-        return;
-    }
 
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-    if (userGuess.toLowercase() == computerGuess) {
+    if (userGuess == computerGuess) {
         win++;
         guesses = 9;
-    } else if (guesses = 0) {
+        guessedLetters = "";
+    } else {
+        guesses--
+        guessedLetters = guessedLetters + " " + userGuess;
+    }
+
+    if (guesses == 0) {
         losses++;
         guesses = 9;
+        guessedLetters = "";
     }
-}
+
+    var html =
+        "<p>wins: " + win + "</p>" +
+        "<p>losses: " + losses + "</p>" +
+        "<p>guesses left: " + guesses + "</p>" +
+        "<p>guessed letters: " + guessedLetters + "</p>";
+
+    document.querySelector("#game").innerHTML = html;
+};
