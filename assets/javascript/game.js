@@ -43,11 +43,23 @@ document.onkeydown = function(Event) {
     }
 
     //display scores on on html
-    var html =
-        "<p>wins: " + win + "</p>" +
-        "<p>losses: " + losses + "</p>" +
-        "<p>guesses left: " + guesses + "</p>" +
-        "<p>guessed letters: " + guessedLetters + "</p>";
+    var html1 =
 
-    document.querySelector("#game").innerHTML = html;
+        "<p>guesses left:</p>" +
+        "<p>" + guesses + "</p>";
+
+    document.querySelector("#game").innerHTML = html1;
+
+    var htmlWins = 
+        "<p>wins: " + win + "</p>";
+    document.querySelector("#wins").innerHTML = htmlWins;
+
+    var htmlLosses = 
+        "<p>losses: " + losses + "</p>"
+    document.querySelector("#losses").innerHTML = htmlLosses;
+
+    var htmlGuessed = 
+        "<p>guessed letters:</p>" +
+        "<p>" + guessedLetters + "</p>";
+    document.querySelector("#guessed").innerHTML = htmlGuessed;
 };
