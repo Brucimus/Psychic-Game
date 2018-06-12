@@ -42,7 +42,7 @@ document.onkeydown = function(Event) {
         guessedLetters = [];
     }
 
-    //display scores on on html
+    //display guesses left
     var html1 =
 
         "<p>guesses left:</p>" +
@@ -50,6 +50,7 @@ document.onkeydown = function(Event) {
 
     document.querySelector("#game").innerHTML = html1;
 
+    //display scores on on html
     var htmlWins = 
         "<p>wins: " + win + "</p>";
     document.querySelector("#wins").innerHTML = htmlWins;
@@ -58,6 +59,7 @@ document.onkeydown = function(Event) {
         "<p>losses: " + losses + "</p>"
     document.querySelector("#losses").innerHTML = htmlLosses;
 
+    //displays guessed letters
     var htmlGuessed = 
         "<p>guessed letters:</p>" +
         "<p>" + guessedLetters + "</p>";
