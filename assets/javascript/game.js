@@ -53,15 +53,18 @@ document.onkeydown = function(Event) {
     //display scores on on html
     var htmlWins = 
         "<p>wins: " + win + "</p>";
+
     document.querySelector("#wins").innerHTML = htmlWins;
 
     var htmlLosses = 
-        "<p>losses: " + losses + "</p>"
+        "<p>losses: " + losses + "</p>";
+
     document.querySelector("#losses").innerHTML = htmlLosses;
 
     //displays guessed letters
     var htmlGuessed = 
         "<p>guessed letters:</p>" +
         "<p>" + guessedLetters + "</p>";
+        
     document.querySelector("#guessed").innerHTML = htmlGuessed;
 };
